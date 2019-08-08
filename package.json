@@ -1,0 +1,23 @@
+{
+  "name": "oppai",
+  "version": "1.0.0",
+  "description": "Electronjs test application.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danny-Clink/electronjs.git"
+  },
+  "author": "Denis Voloshin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danny-Clink/electronjs/issues"
+  },
+  "homepage": "https://github.com/Danny-Clink/electronjs#readme",
+  "dependencies": {
+    "electron": "^5.0.8"
+  }
+}
