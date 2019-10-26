@@ -1,44 +1,29 @@
 <!DOCTYPE html>
 <html>
-     <head>
-          <meta charset="UTF-8">
-          <title>Oppa</title>
-     </head>
-     <style>
-     body{
-          background-color: rgb(52, 52, 54);
-     }
-     .center{
-          margin: auto;
-          padding: 10px;
-          text-align: center;
-     }
-     </style>
-     <body>
-          <div class="center" style="font-size: 18pt;">
-               <div style="color: #FD4C4C;  display: inline-block;">Ты</div>
-               <div style="color: #F49222; display: inline-block">можешь</div>
-               <div style="color: #F3F629; display: inline-block">нажать</div>
-               <div style="color: #53F444; display: inline-block">эту</div>
-               <div style="color: #4B53E5; display: inline-block">кнопку,</div>
-               <div style="color: #D850E4; display: inline-block">а</div>
-               <div style="color: #F49222; display: inline-block">можешь</div>
-               <div style="color: #F3F629; display: inline-block">не</div>
-               <div style="color: #53F444; display: inline-block">нажать</div>
-          </div>
-          <div class="center" style="font-size: 30pt;">:)</div>
-          <div class="center">
-               <button>Книпочка</button>
-          </div>
-          <div class="center" id="picture" style="display: none;">
-               <img src="../img/sklick_sklock.jpg" alt="" style="width: 45%; height: 80%;">
-               <!-- <audio id="song" src="../songs/Queen_We_Are_The_Champions.mp3" preload="auto"></audio> -->
-          </div>
-     </body>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+  <style>
+  .carousel .carousel-item{
+    width:100%;
+    height: 100%;
+  }
+</style>
+  <body>
+      <ul id="tabs-swipe-demo" class="tabs">
+          <li class="tab col s3"><a href="#swipe-1">Test 1</a></li>
+          <!-- <li class="tab col s3"><a class="active" href="#swipe-2">Test 2</a></li> -->
+          <!-- <li class="tab col s3"><a href="#swipe-3">Test 3</a></li> -->
+        </ul>
+        <div id="swipe-1" class="blue">First tab content</div>
+        <!-- <div id="swipe-2" class="red">Second tab content</div> -->
+        <!-- <div id="swipe-3" class="green">Third tab content</div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+     const { ipcRenderer } = require('electron');
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <script src="../javascript/javascriptForm.js"></script>
-     <script>
-          require('./renderer.js');
-     </script>
+     console.log(ipcRenderer.sendSync('render', { id: 1 }));
+     M.Tabs.init(document.querySelectorAll('.tabs'), { swipeable: true });
+    </script>
+  </body>
 </html>
